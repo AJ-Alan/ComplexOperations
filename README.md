@@ -18,6 +18,12 @@ V 0.1.2: <br>
 - Began to type for the Extended Logarithms and Complex Exponentiation by Complex Numbers
 <br>
 
-V 0.1.2: <br>
+V 0.1.3: <br>
 - Added extended logarithm function for complex numbers
 - Added Complex Exponentiation by Complex Numbers
+<br>
+
+V 0.1.4: <br>
+- Imported Trigonometric Function extensions that I have been developing but not documenting
+- Began place for Inverse Trig functions :<
+<br>
