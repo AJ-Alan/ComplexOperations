@@ -136,3 +136,18 @@ def cotangent(g):
 
 ## Inverse Trigonometric functions
 #possibly the hardest complex function
+def arcsine(w):
+  quotientC(
+    logC(
+      addC(
+        productC(w,np.array([0,1])),
+        powC(
+          minusC(
+            np.array[1,0],
+            productC(w,w)
+          ),
+          np.array([0.5,0])
+        )
+      )
+    ),
+    np.array([0,1]))
