@@ -101,3 +101,38 @@ def logarithmC(c1,c2):
       based = logC(c1)
       input = logC(c2)
       return quotientC(c2,c1)
+
+## Trigonometric functions
+# all derived based on their complex definitions and proven by Wolfram Alpha
+def sine(a):
+    real = sin(a[0])*cosh(a[1])
+    imag = cos(a[0])*sinh(a[1])
+    return np.array([real,imag])
+
+def cosine(b):
+    real = cos(b[0])*cosh(b[1])
+    imag = -sin(b[0])*sinh(b[1])
+    return np.array([real,imag])
+
+def tangent(c):
+    real = tan(c[0])/(pow(cosh(c[1]),2)+pow(tan(c[0])*sinh(c[1]),2))
+    imag = tanh(c[1])/(pow(cos(c[0]),2)+pow(tanh(c[1])*sin(c[0]),2))
+    return np.array([real,imag])
+
+def secant(d):
+    real = sec(d[0])*sech(d[1])/(1+pow(tan(d[0])*tanh(d[1]),2))
+    imag = csc(d[0])*csch(d[1])/(1+pow(cot(d[0])*coth(d[1]),2))
+    return np.array([real,imag])
+
+def cosecant(f):
+    real = csc(f[0])*sech(f[1])/(1+pow(cot(f[0])*tanh(f[1]),2))
+    imag = -sec(f[0])*csch(f[1])/(1+pow(tan(f[0])*coth(f[1]),2))
+    return np.array([real,imag])
+
+def cotangent(g):
+    real = tan(g[0])/(pow(cosh(g[1])*sec(g[0]),2)-1)
+    imag = tanh(g[1])/(pow(sech(g[1])*cos(g[0]),2)-1)
+    return np.array([real,imag])
+
+## Inverse Trigonometric functions
+#possibly the hardest complex function
