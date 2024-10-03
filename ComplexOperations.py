@@ -49,11 +49,40 @@ def arctanCC(c) #specific arctangent formula for infinity and negative real case
   if c[0] == 0: #for division by zero cases
     if c[1] > 0: #when the imaginary part is positive -> pi/2
       return pi/2
-    elif c[1] < 0 #when the imaginary part is negative -> -pi/2
+    elif c[1] < 0: #when the imaginary part is negative -> -pi/2
       return -pi/2
-    else #for pure zero cases
+  else: #for pure zero cases
       return 0
   elif c[0] < 0: #for negative real number cases -> pi
     return pi
   else: #for normal cases that isn't included from above
     return atan(c[1]/c[0])
+
+## Functions related to euler's number
+
+# complex natural log
+def logC(c): #necessary for general natural log of complex numbers rather than the log of any number by complex bases 
+  l = findPolar(c) #to find the polar form which is necessary for finding the natural log
+  real = log(l[0]) #real part 
+  imag = l[1] #imaginary part
+  return np.array([real,imag])
+
+# complex exponentiation (by e)
+def expC(c): #useful when dealing with exponential values
+  mult = exp(c[0]) #multiplied to both real and imaginary
+  e = findRect(np.array([1,c[1]])) #to have the imaginary part as the input for the theta
+  real = mult*e[0] #real part
+  imag = mult*e[1] #imaginary part
+  return np.array([real,imag])
+
+## Special Functions
+## complex exponentiation simplified based on my original program
+# The standard form will be:
+#          (c + di)
+# (a + bi)
+# where a, b, c, and d are Real numbers
+# where the general form of Complex Exponentiation where r = sqrt(a^2 + b^2) and theta = arctan(b/a)
+##is: (a + bi)^(c + di) = (r^c)*(e^(-d*theta))*(cos(c*theta + d*ln(r)) + i*sin(c*theta + d*ln(r)))
+
+#def powC(c1,c2):
+  
