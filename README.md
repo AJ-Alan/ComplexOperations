@@ -16,3 +16,8 @@ V 0.1.2: <br>
 - Added natural log function for complex numbers
 - Added exponentiation by euler's number for complex numbers
 - Began to type for the Extended Logarithms and Complex Exponentiation by Complex Numbers
+<br>
+
+V 0.1.2: <br>
+- Added extended logarithm function for complex numbers
+- Added Complex Exponentiation by Complex Numbers
