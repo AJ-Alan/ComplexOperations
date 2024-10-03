@@ -28,6 +28,6 @@ V 0.1.4: <br>
 - Began place for Inverse Trig functions :<
 <br>
 
-V 0.1.5.1 <br>
+V 0.1.5.1: <br>
 - Added Arcsine function but stopped because I need to add the cosine and secant unique findPolar functions for their respective inverse trig functions but that's gonna take a while and Im already tired, so no, not yet
 - I have yet to test if these are working properly, except only for the Trig functions but I have yet to reconfirm that it works still so essentially I only have yet to test everything nooooo :<
