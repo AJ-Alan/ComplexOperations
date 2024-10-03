@@ -10,3 +10,9 @@ V 0.1: <br>
 V 0.1.1: <br>
 - Adding a polar to rectangular form
 - adding a specific arctangent function
+<br>
+
+V 0.1.2: <br>
+- Added natural log function for complex numbers
+- Added exponentiation by euler's number for complex numbers
+- Began to type for the Extended Logarithms and Complex Exponentiation by Complex Numbers
