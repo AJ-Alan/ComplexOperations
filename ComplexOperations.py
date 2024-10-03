@@ -16,12 +16,12 @@ def complexString(a): #function that prints a string based on the complex number
 def addC(c1,c2): #to add 
   return c1 + c2 
 
-def subtractC(c1,c2): #to subtract
+def minusC(c1,c2): #to subtract
   return c1 - c2
 
 def quotientC(c1,c2): #to divide -> c1 is numerator and c2 is denominator
   if c2[0] == 0 and c2[1] == 0: #cannot divide by zero
-    return "Complex infinity"
+    print("Complex infinity")
   else:
     divide = c2[0]**2 + c2[1]**2 #divisor for both real and imaginary parts
     real = (c1[0]*c2[0] + c1[1]*c2[1])/divide #real part
@@ -34,7 +34,6 @@ def productC(c1,c2): #to multiply
     return np.array([real,imag])
 
 ## changing polar form to rectangular form and vice versa
-
 def findPolar(c): #to find polar form
   radius = sqrt(c[0]**2 + c[1]**2) #radius of the complex number
   theta = arctanCC(c) #to find the angle (in radians) from the real axis 
@@ -59,7 +58,6 @@ def arctanCC(c) #specific arctangent formula for infinity and negative real case
     return atan(c[1]/c[0])
 
 ## Functions related to euler's number
-
 # complex natural log
 def logC(c): #necessary for general natural log of complex numbers rather than the log of any number by complex bases 
   l = findPolar(c) #to find the polar form which is necessary for finding the natural log
@@ -76,13 +74,30 @@ def expC(c): #useful when dealing with exponential values
   return np.array([real,imag])
 
 ## Special Functions
-## complex exponentiation simplified based on my original program
-# The standard form will be:
-#          (c + di)
-# (a + bi)
-# where a, b, c, and d are Real numbers
-# where the general form of Complex Exponentiation where r = sqrt(a^2 + b^2) and theta = arctan(b/a)
-##is: (a + bi)^(c + di) = (r^c)*(e^(-d*theta))*(cos(c*theta + d*ln(r)) + i*sin(c*theta + d*ln(r)))
+# complex exponentiation simplified based on my original program
+def powC(c1,c2):
+  if c1[0] == 0 and c1[1] == 0 and c2[0] == 0: # both forms of 0^0 and 0^i are undefined
+    print("\nThe value is undefined")
+  else: 
+    return expC(productC(logC(findPolar(c1)),c2))
 
-#def powC(c1,c2):
-  
+# complex logarithm simplified
+def logarithmC(c1,c2):
+    if c1[0] == 0 and c1[1] == 0:
+        if c2[0] == 0 and c2[1] == 0:
+            print("This is undefined")
+        else:
+            return np.array([0,0])
+    elif c2[0] == 0 and c2[1] == 0:
+        print("The result is complex infinity")
+    elif c1[0] == 1 and c1[1] == 0:
+        if c2[0] == 1 and c2[1] == 0:
+            print("This is undefined")
+        else:
+            print("The result is complex infinity")
+    elif c1[0] == c2[0] and c1[1] == c1[1]:
+        return np.array([1,0])
+    else:
+      based = logC(c1)
+      input = logC(c2)
+      return quotientC(c2,c1)
