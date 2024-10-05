@@ -29,7 +29,7 @@ def quotientC(c1,c2): #to divide -> c1 is numerator and c2 is denominator
     return np.array([real,imag])
   
 def productC(c1,c2): #to multiply
-    real = c1[0]*c2[0] - c1[1]*c2[1]) #real part
+    real = c1[0]*c2[0] - c1[1]*c2[1] #real part
     imag = c2[0]*c1[1] + c1[0]*c2[1] #imaginary part
     return np.array([real,imag])
 
@@ -44,13 +44,13 @@ def findRect(c): #to find the rectangular form where c[0] == radius and c[1] == 
   imag = c[0]*sin(c[1])
   return np.array([real,imag])
   
-def arctanCC(c) #specific arctangent formula for infinity and negative real cases when finding the argument of the complex number 
+def arctanCC(c): #specific arctangent formula for infinity and negative real cases when finding the argument of the complex number 
   if c[0] == 0: #for division by zero cases
     if c[1] > 0: #when the imaginary part is positive -> pi/2
       return pi/2
     elif c[1] < 0: #when the imaginary part is negative -> -pi/2
       return -pi/2
-  else: #for pure zero cases
+    else: #for pure zero caseso
       return 0
   elif c[0] < 0: #for negative real number cases -> pi
     return pi
@@ -151,3 +151,8 @@ def arcsine(w):
       )
     ),
     np.array([0,1]))
+
+
+a = np.array([2,2])
+b = np.array([-3,5])
+
